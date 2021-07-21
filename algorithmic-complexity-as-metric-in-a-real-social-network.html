@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link rel="shortcut icon" href="theme/img/favicon.ico" />
+<head>
+ <title>Algorithmic Complexity as metric in a Real Social Network</title>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="theme/css/main.css" />
+    <!-- Using MathJax, with the delimiters $ -->
+    <!-- Conflict with pygments for the .mo and .mi -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+ "HTML-CSS": { linebreaks: { automatic: true } },
+         SVG: { linebreaks: { automatic: true } }
+});
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/8ed6d7ff32.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <title></title>
+<div class="container">
+  <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>  
+  </nav>
+
+
+<!-- Main Content -->
+
+<!--PROGRESS BAR-->
+<progress value="0"></progress>
+<script type="text/javascript" src="theme/js/progbar.js"></script>
+
+<div class="date-tags">
+    <h6>11 September 2020 | <svg role="img" viewBox="0 0 24 24" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <title>Tag</title>
+    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>  
+    <a href="/mathematics.html">MATHEMATICS</a>, 
+ 
+    <a href="/graph-theory.html">GRAPH-THEORY</a>, 
+ 
+    <a href="/information-theory.html">INFORMATION-THEORY</a>, 
+ </h6>
+</div>
+
+<section id="article-showcase" style="background-image: url('/img/algocomp.gif');">
+    <h1><span><strong>More on... </strong>Algorithmic Complexity as metric in a Real Social Network</span></h1>
+</section>
+
+<section id="intro">
+    <hr>
+        <h4><p>Analysis of two time-like separated states in a social network via algorithmic complexity measure</p></h4>
+</section>
+
+<!--HERE GOES THE TOC-->
+<div class="article-content">
+    <p><div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#pdfs">PDFs</a></li>
+<li><a href="#the-system-under-study">The System Under Study</a></li>
+<li><a href="#graph-theoretical-formulation-of-the-problem">Graph-Theoretical Formulation of the Problem</a></li>
+<li><a href="#algorithmic-complexity-vs-classical-information-metrics">Algorithmic Complexity vs. Classical Information Metrics.</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+<hr style="
+border-top: 5px dotted #72757e;
+width: 10%;
+color: #72757e;
+margin-bottom: 30px;
+margin-top: 30px;">
+
+<blockquote>
+<p>To know a thing's true name is to possess a power unprecedented over it. Recite it, and you're its master. </p>
+</blockquote>
+<h1 id="pdfs">PDFs</h1>
+<p><a href="/img/docs/LANET_POSTER.pdf">Full Scientific Poster</a></p>
+<p><a href="/img/docs/SOCIAL_NETWORK_ANALYSIS.pdf">Social Network Analysis (in Spanish)</a></p>
+<h1 id="the-system-under-study">The System Under Study</h1>
+<p>An Oncology Clinic where patients get (hopefully negative) lab results for a cancer diagnosis is sure to be a stressful environment to work at, of that there is no doubt. </p>
+<p>In this necessary but precarious environment, a thesis study in the frame of psychological praxis was conducted at the Autonomous University of Zacatecas' (UAZ) Academic Unit of Psychology - their goal: <em>determine how a certain psychological intervention resonates among a team of workers with shown signs of growing animosity between them; with the aim of strengthening interpersonal bonds among them.</em></p>
+<p>This work culminated in the successful Bachelor's thesis of Erika del Carmen Velazquez under the tutelage of Maria Dolores Aldaba in 2015 - however; as successful as the intervention had been, they had no means by which to <strong>quantitatively</strong> show that the targeted team's interpersonal relationships had undergone any improvement whatsoever - enter my study group at UAZ's Academic Unit of Physics. </p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="vsmall" src="/img/algocomp0.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Oncology clinic - Located in Guadalupe, Zacatecas. Mexico.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="graph-theoretical-formulation-of-the-problem">Graph-Theoretical Formulation of the Problem</h1>
+<p>A suitable mathematical way to model the situation is via the construction of two <em>graphs</em>. Let a graph \(\mathcal{G}\) be loosely defined to have:
+$$
+\mathcal{G} := \{\mathcal{N},\mathcal{L},\mathcal{V}\}.
+$$
+Where \(\mathcal{N}\) represents the nodes in the graph (in our case, the different members of the team), \(\mathcal{L}\) stands for the "arcs" or "lines" joining each node (if person \(a\) has some sort of relationship, albeit good or bad with person \(b\), then the "element" of \(\mathcal{L}\) corresponding to these two individuals will be nonzero).</p>
+<p>Finally, \(\mathcal{V}\) is known as the "weight" or "value" attributed to every element of \(\mathcal{L}\). Not all weights are made equal though, nor are they forcefully "symmetric" in the sense that; person \(a\) might feel as if he's in good standing with person \(b\) - this needn't be true the other way around (sadly). </p>
+<p>The graph \(\mathcal{G}\) is known as a <strong>Directed and Valued Graph</strong>. And in this case, the values of the different connections between nodes (weights) are any one number from \(0, 1, \ldots 4\). This comes from the inter-personal relationship "ranking" done by the psychologists.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="medium" src="/img/algocomp1.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">The psychological evaluation behind these values is as above!</td>
+</tr>
+</tbody>
+</table>
+<p>A small example follows:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="small" src="/img/algocomp2.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">A simple graph representation between people \(a,b,c\).</td>
+</tr>
+</tbody>
+</table>
+<p>Note too that this formulation is a more pictorial representation of an <strong>adjacency matrix</strong>. </p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="medium" src="/img/algocomp3.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">From graph to adjacency matrix and vice-versa. Can you say why the diagonal entries are all \(0\)? (:</td>
+</tr>
+</tbody>
+</table>
+<h1 id="algorithmic-complexity-vs-classical-information-metrics">Algorithmic Complexity vs. Classical Information Metrics.</h1>
+<p>Two situations are of interest; a "pre-intervention" case and a "post-intervention" case.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="small" src="/img/algocomp4.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Graph and illustrative adjacency matrix for both situations.</td>
+</tr>
+</tbody>
+</table>
+<p>Comparing the two different states this system is in could be done in various ways - we focus however, on both the Classical Theory of Information (CI) and the Algorithmic Complexity Formulation (AC).</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="small" src="/img/algocomp5.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">On the left, Claude Shannon, father of information theory. On the right Zenil, Chaitin and Kolmogorov, proponents of algorithmic complexity as a whole.</td>
+</tr>
+</tbody>
+</table>
+<p>Something which aids our computations is the Semantic Vector - if I take one vertex between two nodes at random, which probability do I have for it being a "1" vertex? What about a "4"? - the semantic vector simply contains in its entries the probabilities of obtaining the different weights within the graph. I.e., in our case it looks a bit like this:
+$$
+\vec{S} = \{p_{0}, p_{1}, p_{2}, p_{3}, p_{4}\}.
+$$</p>
+<p>Where the \(p_{j}\)s, are nothing but the probability of obtaining the corresponding weight from the graph as explained above.</p>
+<p>With help of this so-called <em>Semantic Vector</em> we can easily compute Shannon's Entropy, written as:
+$$
+H(p) = -\sum_{i}^{n}p_{i}\log_{2}p_{i}.
+$$
+This yields a value of the information in the network measured in <em>bits</em>. </p>
+<p>Algorithmic Complexity cannot be directly nor exactly calculated, however it can be upper bounded via the so-called <strong>Block Decomposition Method</strong> (BDM), which through the <em>coding theorem method</em> (CTM), allows a local estimation of Algorithmic Complexity for our network. Thus:
+$$
+BDM = \sum_{i}^{n}CTM(b_{i})+\log_{2}(|b_{i}|).
+$$</p>
+<p>So... Why go this length to calculate the same quantity via <strong>two different methods?</strong> The differences between the classical theory and the more modern algorithmic approach are as subtle as they are deep. </p>
+<p>For starters, the classical theory is <em>highly syntactically restrained</em>, meaning that if the Semantic Vector were to be shuffled about and permuted in any shape or form, Shannon's entropy won't change. In reality however, a change in these probabilities would mean a totally different physical situation. </p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="medium" src="/img/algocomp6.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Example of the non-triviality of probability permutation. No one in their right mind would want to go to jail, right?</td>
+</tr>
+</tbody>
+</table>
+<p>In contrast, Algorithmic Complexity is a <em>universal measure of complexity</em> and thus, it is independent of the description of the object. Meaning that such permutations in the probabilities of a system like ours would result in variations in AC since we are talking about a <em>fundamentally different object</em>. I.e. it is a highly semantical formulation of information. </p>
+<p>This property can be clearly observed when taking extreme cases - not the real networks studied here mind you. Highly homogeneous cases - such as a 100% harmonious clinic and in contrast, a 100% chaotic clinic. Shannon's entropy for these cases is identical. Algorithmic Complexity is not - thus providing a more complete and "universal" lens through which we can analyze a system by its information content. </p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="medium" src="/img/algocomp7.jpg"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Normalized w.r.t. the random adjacency matrix information content. NOTICE how the "less-than-ideal" case differs in information content w.r.t. the "ideal" case but only while estimating algorithmic complexity.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="conclusions">Conclusions</h1>
+<p>A workflow is established in order to further investigate relevant changes in the physical system of interest. That is, to estimate the Algorithmic Complexity of an object at various stages in its temporal evolution can bring forth much ado about how much it has changed and in which ways has it done so. </p>
+<p>Using both a classical and algorithmic framework and comparing the two alongside extreme cases one can then from the "measurement" of information alone infer changes and patterns in the original system - regardless of how it is built or thought of initially. </p>
+<p>However, since a true value of algorithmic complexity is unattainable, various degrees of approximation ought to be studied further as well as additional sources of imprecision; such as added granularity due to binary translation, block-size variation while calculating the BDM, etc.</p>
+<p>It is often a trope in media that "to know a thing's <em>true name</em>" might give you a measure of power over said thing - I propose that any thing's <em>true name</em> is its <strong>algorithmic complexity</strong>.</p>
+<h1 id="references">References</h1>
+<p>[1] <a href="https://arxiv.org/abs/1211.1302">Soler-Toscano, Hector Zenil, Jean-Paul Delahaye, Nicolas Gauvrit, 2014</a>.</p>
+<p>[2] <a href="https://arxiv.org/abs/1609.00110">Hector Zenil, Santiago Hernandez-Orozco, Narsis A. Kiani, Fernando Soler-Toscano, Antonio Rueda-Toicen, 2018</a>.</p>
+<p>[3] <a href="https://www.algorithmicdynamics.net/">Algorithmic Dynamics Lab, Consulted 2020</a></p>
+<p>[4] <a href="http://tuvalu.santafe.edu/~simon/it.pdf">Simon DeDeo, Consulted 2018</a></p>
+<p>[5] <a href="">Dolores M., Velazquez E., Las Emociones y el Autoconcepto en el Personal del area de Oncologia. Consulted 2017, held at UAZ's thesis archive</a></p></p>
+</div>
+
+<!-- SOCIAL FOOTER -->
+<section class="social">
+<hr style="
+border-top: 5px dotted #72757e;
+width: 30%;
+color: #72757e;
+margin-bottom: 30px;
+margin-top: 30px;">
+<h5>Get in touch.</h5>
+    <li> <a href="https://twitter.com/AbeHerSan" class="fab fa-twitter"><span class="label"></span></a> </li>
+    <li> <a href="mailto:abehersan.77@gmail.com" class="fas fa-envelope"><span class="label"></span></a> </li>
+<hr style="
+border-top: 5px dotted #72757e;
+width: 30%;
+color: #72757e;
+margin-bottom: 30px;
+margin-top: 30px;">
+</section>
+<!-- End of Main Content --> 
+
+
+<!--  Footer   -->
+<footer id="footer">
+    <a href="#">↑ Top</a> | <a href="about.html">J. Abraham Hernández</a> 2021
+</footer>
+<!--  End Footer  -->
+</div>
+</body>
+</html>
