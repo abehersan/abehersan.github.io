@@ -1,0 +1,481 @@
+/*-------BODY-------*/
+body {
+  /*background-image: url('theme/mytheme/static/img/pollock_electricnight.jpg');*/
+  background-color: #16161a;
+  color: #fffffe;  
+  font-family: Bahnschrift, Geneva, Helvetica;
+  line-height: 1.6em;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 2px solid;
+    padding-left: 1em;
+}
+
+/*-------Equations-------*/
+.MathJax_Display {
+  color: #fffffe !important;
+  font-size: 18px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.MathJax_Display .MathJax{
+  display: inline-block;
+  width: 100%;
+}
+
+/*-------General Container-------*/
+.container {
+  width: 60%;
+  overflow: hidden;
+  font-size: 22px;
+  margin: auto;
+  background-color: #16161a;
+}
+
+.container a{
+  color: #fffffe;
+  text-decoration: underline;
+  text-decoration-color: #2cb67d;
+  font-size: 18px;
+}
+
+.container a:hover{
+  color: #a64dff;
+}
+
+/*-------Navbar-------*/
+#navbar {
+  padding-bottom: 10px;
+  margin-top: 20px;
+}
+
+#navbar ul{
+  padding: 0;
+  list-style: none;
+}
+
+#navbar li{
+  display: inline;
+}
+
+#navbar a{
+  color: #fffffe;
+  text-decoration: none;
+  font-size: 24px;
+  padding-right: 16px;
+  background-color: #16161a;
+  display: inline-block;
+}
+
+#navbar a:hover{
+  color: #a64dff;
+}
+
+/*-------Personal Showcase-------*/
+#personal-showcase {
+  background-image: url('/img/me.JPG');
+  overflow: hidden;
+  background-position: center 80%;
+  min-height: 300px;
+  position: relative;
+}
+
+#personal-showcase h1{
+  margin: auto;
+  color: #fffffe;
+  font-size: 50px;
+  line-height: 1.6em;
+  padding-top: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/*-------Intro-------*/
+#intro {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#intro hr {
+  border-top: 5px dotted #72757e;
+  width: 10%;
+  color: #72757e;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#intro a{
+  color: #fffffe;
+  text-decoration: underline;
+  text-decoration-color: #2cb67d;
+  font-size: 24px;
+}
+
+#intro a:hover{
+  color: #a64dff;
+}
+
+#intro p{
+  text-align: justify;
+}
+
+/*-------About-------*/
+#about {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+#about hr {
+  border-top: 5px dotted #72757e;
+  width: 10%;
+  color: #72757e;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#about a{
+  color: #fffffe;
+  text-decoration: none;
+  text-decoration-color: #2cb67d;
+  font-size: 18px;
+}
+
+#about a:hover{
+  color: #a64dff;
+}
+
+#about p{
+  text-align: justify;
+}
+
+/*-------Date and Tags (Article)-------*/
+.date-tags {
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.date-tags h6{
+  color: #72757e;
+}
+.date-tags a{
+  color: #72757e;
+  text-decoration: none;
+}
+
+.date-tags a:hover{
+  color: #a64dff;
+}
+
+/*-------Article-Showcase-------*/
+#article-showcase {
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  background-position: center;
+  min-height: 300px;
+  position: relative;
+}
+
+#article-showcase h1{
+  margin: auto;
+  color: #fffffe;
+  font-size: 50px;
+  line-height: 1.6em;
+  padding-top: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/*-------Article-Content-------*/
+.article-content h1:hover{
+  background-color: #fffffe;
+  color: #16161a;
+}
+
+.article-content td{
+  padding-bottom: 1em;
+}
+
+.article-content em{
+  text-decoration: underline;
+  text-decoration-color: #2cb67d;
+}
+
+.article-content strong{
+  color: #a64dff;
+}
+
+/*-------Progress bar-------*/
+progress {
+  /* Positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  /* Dimensions */
+  width: 100%;
+  height: 5px;
+
+  /* Reset the appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+
+  /* Get rid of the default border in Firefox/Opera. */
+  border: none;
+
+  /* Progress bar container for Firefox/IE10+ */
+  background-color: transparent;
+
+  /* Progress bar value for IE10+ */
+  color: #2cb67d;
+}
+
+progress::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+progress::-webkit-progress-value {
+  background-color: #2cb67d;
+}
+
+progress::-moz-progress-bar {
+  background-color: #2cb67d;
+}
+
+/*-------Post containers-------*/
+.col-md-4{
+ padding: 0.2em;
+}
+
+.containertumb {
+  position: relative;
+  width: 100%;
+  opacity: 1;
+  height: 100%;
+  background-color: #72757e;
+}
+
+.containertumb:hover .tumb {
+  opacity: 0;
+}
+
+.containertumb:hover .middle {
+  opacity: 0;
+    color: #fffffe;
+}
+
+.containertumb:hover .middleback {
+  opacity: 1;
+}
+
+.containertumb a{
+  padding-bottom: 0em;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.middleback {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fffffe;
+  background-color: black;
+}
+
+.middlebacktext{
+    padding: 1em;
+    color: #fffffe;
+    font-size: 14px;
+}
+
+.middlebacktext hr{
+    color: #fffffe;
+    width: 70%;
+}
+
+.middlebacktext strong{
+    text-decoration: underline;
+}
+
+.middlebacktext a{
+  color: #fffffe;
+}
+
+.text {
+  color: #fffffe;
+}
+
+.tumb {
+  opacity: 0.5;
+  display: block;
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+/*-------Images-------*/
+img[alt=tiny] { 
+    float: right; 
+    width: 300px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+img[alt=vsmall] { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+img[alt=small] { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+img[alt=medium] { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+img[alt=large] { 
+    margin-top: 2em;
+    float: none; 
+    width: 100%;
+}
+
+a img:hover{
+    opacity: 0.8;
+}
+
+/*-------Table of Contents-------*/
+.toc {  
+  font-size: 18px;
+  display: table;
+  width: auto;
+}
+
+/* TOC heading in bold */
+.toc .toctitle {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* No bullets for toc list, indentation of nested lists 1em */
+.toc ul {
+  list-style-type: disc;
+  padding-left: 1em;
+}
+
+/* Top level list has no indentation */
+.toc > ul {
+  padding-left: 0;
+  margin-top: 0;
+  padding-left: 1em;
+}
+
+/*-------Article Headers-------*/
+
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+}
+
+*:hover > .headerlink, .headerlink:focus {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+/*-------Social Links-------*/
+.social {
+  text-align: center;
+}
+
+.social ul{
+  list-style: none;
+  font-size: 1.5em;
+}
+
+.social li{
+  display: inline-block;
+}
+
+.social a{
+  color: #fffffe;
+  text-decoration: underline;
+  text-decoration-color: #2cb67d;
+  font-size: 28px;
+  padding: 0.2em 0.2em;
+}
+
+.social a:hover{
+  color: #a64dff;
+}
+
+/*-------Footer-------*/
+#footer {
+  color: #fffffe; 
+  text-align: right;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+#footer a{
+  color: #fffffe;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#footer a:hover{
+  color: #a64dff;
+}
+
+/*-------Media Queries-------*/
+@media only screen and (max-width: 980px) {
+  body {
+    width: 100%;
+    
+  }  
+  .container{
+    width: 100%;
+    
+  }
+}
